@@ -29,13 +29,21 @@ def display_books():
             year_release = book["year_released"]
             print(f"{name} by {author}, ({year_release})")
 
+operations = {
+    'a': 'add_book',
+    'd': 'display_books'
+}
+
 
 while True:
     choice = input(menu).strip().lower()
-    if choice == 'a':
-        add_book()
-    elif choice == 'd':
-        display_books()
+    # if choice == 'a':
+    #     add_book()
+    # elif choice == 'd':
+    #     display_books()
+    if choice in operations:
+        fname = operations[choice]
+        globals()[fname]()
     elif choice == 'q':
         print("Quitting the menu")
         break
