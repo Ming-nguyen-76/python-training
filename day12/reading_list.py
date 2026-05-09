@@ -22,8 +22,8 @@ def display_books():
     if len(book_list) == 0:
         print("There is no book in book list")
     else:
-        for i in range(len(book_list)):
-            book = book_list[i]
+        # for i in range(len(book_list)):
+        for book in book_list:
             name = book["name"]
             author = book["author"]
             year_release = book["year_released"]
